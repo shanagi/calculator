@@ -1,4 +1,4 @@
-import { initialState, press, display } from "./calc.js";
+import { initialState, press, display } from "./calc.js?v=2";
 
 const MAX_FONT = 56;
 const MIN_FONT = 20;
