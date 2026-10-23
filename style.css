@@ -1,0 +1,112 @@
+:root {
+  --bg: #f2f3f5;
+  --panel: #ffffff;
+  --text: #1d1f23;
+  --key: #e9ebef;
+  --key-fn: #d5d9e0;
+  --accent: #2f6fed;
+  --accent-text: #ffffff;
+  --accent-soft: #dfe8fd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --panel: #1f2226;
+    --text: #eef0f3;
+    --key: #2c3036;
+    --key-fn: #3a3f47;
+    --accent: #4d86f5;
+    --accent-text: #ffffff;
+    --accent-soft: #2a3a5c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", sans-serif;
+}
+
+.calc {
+  width: 100%;
+  max-width: 360px;
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.display {
+  display: block;
+  min-height: 88px;
+  padding: 8px 4px 16px;
+  text-align: right;
+  font-size: 56px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.display.wrap {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 64px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--key);
+  color: var(--text);
+  font: inherit;
+  font-size: 24px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:active {
+  filter: brightness(0.9);
+}
+
+.fn {
+  background: var(--key-fn);
+}
+
+.op {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.op.active {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.eq {
+  grid-column: 4;
+  grid-row: 2 / span 4;
+  height: auto;
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.zero {
+  grid-column: span 2;
+}
