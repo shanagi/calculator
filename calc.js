@@ -92,10 +92,13 @@ function evaluate(state) {
   if (intPart(text).length > MAX_INT_DIGITS) {
     return { ...initialState(), error: true };
   }
+  // 倍率は解除せず残し、= の連打で掛け続けられるようにする
   return {
     ...initialState(),
     text,
     negative: state.negative && !isZero(text),
+    pending: state.pending,
+    starCount: state.starCount,
   };
 }
 

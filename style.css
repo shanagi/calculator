@@ -90,6 +90,9 @@ button:active {
 }
 
 .op {
+  grid-column: span 2;
+  font-size: 32px;
+  font-weight: 700;
   background: var(--accent-soft);
   color: var(--accent);
 }
@@ -100,8 +103,7 @@ button:active {
 }
 
 .eq {
-  grid-column: 4;
-  grid-row: 2 / span 4;
+  grid-row: span 2;
   height: auto;
   background: var(--accent);
   color: var(--accent-text);
